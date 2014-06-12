@@ -28,7 +28,7 @@ var server = http.createServer(function (request, response) {
         response.write(data);
         response.end();
     });
-}).listen(8080);
+}).listen(INSERT PORT NUMBER ON WHICH TO LISTEN);
 
 var io = require('socket.io').listen(server);
 
