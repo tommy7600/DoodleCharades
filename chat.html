@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Doodlezors</title>
+        <link rel="stylesheet" type="text/css" href="chat.css">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+        <script src="http://54.187.31.161:8080/socket.io/socket.io.js"></script>
+    </head>
+    <body onload="disableMsg()">
+        <img class="backgroundimg"/>
+        <h1 id="titlemessage">Doodlezors</h1>
+            <h2 class="centerText">Draw Here!</h3>
+        <div id = "canvasBox">
+            <canvas id="canvas" class="center">Your browser does not support this game</canvas>
+        </div>
+        <div class="centerText">
+            <b id="numUsers" class="centerText"></b>
+            <h3 id="keyword" class="centerText"></h3>
+        </div>
+            <h3 class="centerText">Chat Room!</h3>
+            <p id="nameEntry" class="centerText">Please enter a user name: </p>
+        <div class="centerText">
+            <input type="text" id="userfield" maxlength="15"/>
+            <button onclick="addUser()" id="joinbutton">Join</button>
+        </div>
+            <div id="chatbox" class="shadow" ></div>
+            <br/>
+        <div class="centerText">
+            <input type="text" id="messagebox" maxlength="90"/>
+            <button onclick="sendMessage()" id="sendbutton">Send</button>
+        </div>
+        <br/>
+        <br/>
+        <script src="chat.js" type="text/javascript"></script>
+    </body>
+</html>
