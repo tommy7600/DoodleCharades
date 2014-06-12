@@ -1,4 +1,4 @@
-var socket = io.connect("http://54.187.31.161:8080/");
+var socket = io.connect("http://INSERT HOST URL OR IP ADDRESS AND PORT/");
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 
