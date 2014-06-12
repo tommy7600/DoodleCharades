@@ -14,7 +14,7 @@
 }
 
 .backgroundimg {
-    content: url("http://forums.autodesk.com/autodesk/attachments/autodesk/133/69553/1/Gradient%20Background%20Export%206000%20pixels.jpg");
+    /* content: url(""); Insert the background of you choice.*/
     position: absolute;
     left: 0px;
     top: 0px;
@@ -24,7 +24,7 @@
 }
 
 body {
-    background-image: url("http://forums.autodesk.com/autodesk/attachments/autodesk/133/69553/1/Gradient%20Background%20Export%206000%20pixels.jpg");
+    /* background-image: url(""); Insert the background of your choice.*/
 }
 
 .centerText {
