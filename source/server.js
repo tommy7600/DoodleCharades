@@ -28,7 +28,7 @@ var server = http.createServer(function (request, response) {
         response.write(data);
         response.end();
     });
-}).listen(INSERT PORT NUMBER ON WHICH TO LISTEN);
+}).listen(8080);
 
 var io = require('socket.io').listen(server);
 
@@ -62,7 +62,7 @@ var mytimer = setInterval(nextTurn, 60000);
 
 io.sockets.on('connection', function (socket) {
     socket.on('message_from_client', function (data) {
-        if (data.message.toLowerCase() === currKeyword && (data.name !== currTurn || data.id !== currid)) {
+        if (data.message.toLowerCase() === currKeyword && data.name !== currTurn) {
             io.sockets.emit("message_to_client", {name: data.name, message: data.message});
             io.sockets.emit("message_to_client", {name: data.name, message: "<-- Guessed the correct word! The answer was: " + currKeyword});
             clearInterval(mytimer);

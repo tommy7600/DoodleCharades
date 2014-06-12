@@ -1,4 +1,4 @@
-var socket = io.connect("http://INSERT HOST URL OR IP ADDRESS AND PORT/");
+var socket = io.connect("http://localhost:8080/");
 var canvas = document.getElementById("canvas");
 var context = canvas.getContext("2d");
 
@@ -39,7 +39,7 @@ socket.on("update_users", function (data) {
 
 socket.on("next_turn", function (data) {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    if (data.name === myName && data.id === socket.socket.sessionid) {
+    if (data.name === myName) {
         myTurn = true;
         document.getElementById("keyword").innerHTML = "Your word to draw is: " + data.word;
     } else {
@@ -138,7 +138,7 @@ canvas.addEventListener('mousemove', putPoint);
 function sendMessage() {
     var msg = document.getElementById("messagebox").value;
     document.getElementById("messagebox").value = "";
-    socket.emit("message_from_client", {name: document.getElementById("canvas").value, message : msg, id: socket.socket.sessionid});
+    socket.emit("message_from_client", {name: document.getElementById("canvas").value, message : msg});
     $('#messagebox').focus();
 }
 
